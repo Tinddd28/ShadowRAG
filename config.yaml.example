@@ -1,0 +1,27 @@
+http:
+  port: "31232"
+  idle_timeout: 60
+  read_timeout: 60
+  write_timeout: 60
+
+database:
+  url: "host=127.0.0.1 port=9999 user=postgres dbname=postgres password=postgres sslmode=disable"
+  max_conn: 10
+
+llm: # OPENAI format
+  model: "deepseek/deepseek-v4-flash"
+  api_key: ""
+  host: ""
+
+concurency:
+  max_async: 4
+  max_parallel_insert: 2
+  emb_func_max_async: 4
+  emb_batch_num: 8
+
+embedding:
+  model: "baai/bge-m3"
+  api_key: ""
+  host: ""
+  dim: 1024
+  context_length: 8192 # the max length of text to be embedded, if the text is longer than this value, it will be truncated
